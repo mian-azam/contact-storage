@@ -39,7 +39,7 @@ class Contact {
 const btn = select('.btn');
 const parent = select('.parent');
 const para = select('.para');
-// const paraTwo = select('.para-two');
+const numOfContacts = select('.num-of-contacts');
 const userInput = select('.input');
 const style = select('.style');
 const emailRegex = /^(?=^.{8,}$)[-_A-Za-z0-9]+([_.-][a-zA-Z0-9]+)*@[A-Za-z0-9]+([.-][a-zA-Z0-9]+)*\.[A-Za-z]{2,}$/;
@@ -49,7 +49,7 @@ const regex = /^\w{ 1, 64 } (?: [, \t] +\w{ 1, 64 }) { 0, 15 } $/;
 
 
 const contactArr = [];
-console.log(contactArr.length);
+
 
 
 
@@ -89,8 +89,9 @@ function work() {
 }
 
 function savedContacts() {
-
+    numOfContacts.innerText = `Stored Contacts: ${contactArr.length}`
 }
+
 
 // onEvent('click', infoDiv, function () {
 //     paraTwo.innerText = `Contact: ${contactArr.indexOf(contact) + 1} `;
@@ -103,8 +104,7 @@ onEvent('click', btn, function (event) {
     } else {
         work();
     }
-
+    savedContacts();
 
 });
 
-// ^\w{ 1, 64 } (?: [, \t] +\w{ 1, 64 }) { 0, 15 } $
