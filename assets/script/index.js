@@ -51,8 +51,15 @@ const regex = /^\w{ 1, 64 } (?: [, \t] +\w{ 1, 64 }) { 0, 15 } $/;
 
 const contactArr = [];
 
-
-
+console.log(contactArr);
+// function savedContacts() {
+//     numOfContacts.innerText = `Stored Contacts: ${contactArr.length}`
+// }
+function updateArray(array) {
+    if (Array.isArray(array) && array.length > 0) {
+        numOfContacts.innerText = `Stored Contacts: ${array.length}`;
+    }
+}
 
 function work() {
     let info = userInput.value;
@@ -67,6 +74,7 @@ function work() {
             const contact = new Contact(infoArr[0], infoArr[1], infoArr[2]);
             contactArr.push(contact);
 
+
             const infoDiv = document.createElement('div');
             const paraOne = document.createElement('p');
             const paraTwo = document.createElement('p');
@@ -75,18 +83,20 @@ function work() {
             infoDiv.appendChild(paraOne);
             infoDiv.appendChild(paraTwo);
             infoDiv.appendChild(paraThree);
+            updateArray(contactArr);
             paraOne.innerText = `Name: ${contact.getName()}`;
             paraTwo.innerText = `City: ${contact.getCity()}`;
             paraThree.innerText = `Email: ${contact.getEmail()}`;
-
             para.innerText = '';
 
+
             onEvent('click', infoDiv, function () {
-                // const specificIndex = contactArr.indexOf(contact) + 1
-                // indexP.innerText = `Contact: ${specificIndex} `;
-
-                infoDiv.remove();
-
+                const specificIndex = contactArr.indexOf(contact) + 1
+                if (specificIndex > -1) {
+                    contactArr.splice(specificIndex, 1);
+                    infoDiv.remove();
+                }
+                updateArray(contactArr);
             });
         }
 
@@ -97,12 +107,6 @@ function work() {
 
 
 }
-
-function savedContacts() {
-    numOfContacts.innerText = `Stored Contacts: ${contactArr.length}`
-}
-
-
 
 
 onEvent('click', btn, function (event) {
