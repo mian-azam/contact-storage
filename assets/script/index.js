@@ -88,6 +88,7 @@ function work() {
             paraTwo.innerText = `City: ${contact.getCity()}`;
             paraThree.innerText = `Email: ${contact.getEmail()}`;
             para.innerText = '';
+            userInput.value = '';
 
 
             onEvent('click', infoDiv, function () {
