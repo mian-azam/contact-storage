@@ -1,2 +1,2 @@
 # contact-storage
-click [here]() to save your contacts.
+click [here](https://mian-azam.github.io/contact-storage/) to save your contacts.
