@@ -39,6 +39,7 @@ class Contact {
 const btn = select('.btn');
 const parent = select('.parent');
 const para = select('.para');
+const indexP = select('.index')
 const numOfContacts = select('.num-of-contacts');
 const userInput = select('.input');
 const style = select('.style');
@@ -79,13 +80,22 @@ function work() {
             paraThree.innerText = `Email: ${contact.getEmail()}`;
 
             para.innerText = '';
+
+            onEvent('click', infoDiv, function () {
+                // const specificIndex = contactArr.indexOf(contact) + 1
+                // indexP.innerText = `Contact: ${specificIndex} `;
+
+                infoDiv.remove();
+
+            });
         }
 
 
     } else {
         para.innerText = 'Name, City and Email, all are required.';
     }
-    // para.innerText = `Saved Contacts: ${contactArr.length} `;
+
+
 }
 
 function savedContacts() {
@@ -93,9 +103,7 @@ function savedContacts() {
 }
 
 
-// onEvent('click', infoDiv, function () {
-//     paraTwo.innerText = `Contact: ${contactArr.indexOf(contact) + 1} `;
-// });
+
 
 onEvent('click', btn, function (event) {
     event.preventDefault();
@@ -104,7 +112,6 @@ onEvent('click', btn, function (event) {
     } else {
         work();
     }
-    savedContacts();
 
 });
 
