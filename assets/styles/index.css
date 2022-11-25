@@ -1,0 +1,83 @@
+@import url(./reset.css);
+
+body {
+    background-color: rgba(128, 136, 143, 0.5);
+}
+
+.container {
+    display: grid;
+    width: min(100% - 30px, 1280px);
+    margin-inline: auto;
+    place-items: center;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+input {
+    width: 300px;
+    height: 48px;
+    padding: 0 15px;
+    border: 1px solid rgba(34, 13, 13, 0.1);
+    background-color: rgba(228, 238, 218, 0.3);
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--app-dark-bg);
+    text-align: left;
+}
+
+input+input {
+    margin-top: 10px;
+}
+
+button {
+    width: 120px;
+    height: 50px;
+    margin: 10px 0;
+    margin-left: 10px;
+    text-align: center;
+    background-color: #1c2b23;
+    border: 1px solid #576043;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: all 0.25s ease-in-out;
+    color: #f2f4f6;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #66cfba;
+    transition: all 0.1s ease-in-out;
+}
+
+.parent {
+    width: 600px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-gap: 20px;
+    place-self: center;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+p {
+    align-self: center;
+    font-size: 20px;
+}
+
+div {
+    height: 120px;
+    width: 240px;
+    background-color: rgba(228, 238, 218, 0.3);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
+    padding: 10px;
+}
